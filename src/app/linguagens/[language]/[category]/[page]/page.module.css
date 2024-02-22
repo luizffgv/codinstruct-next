@@ -1,0 +1,99 @@
+.content {
+  line-height: 1.4;
+  list-style-position: inside;
+  margin-left: var(--sidebar-width-unexpanded);
+  padding-bottom: 25svh; /* So the last lines don't stay stuck to the bottom of the viewport */
+
+  padding-left: calc(
+    max(5px, -69.18px + 26.49vw) - var(--sidebar-width-unexpanded) / 2
+  );
+  padding-right: calc(
+    max(5px, -69.18px + 26.49vw) - var(--sidebar-width-unexpanded) / 2
+  );
+  @media screen and (min-width: 1620px) {
+    /* At 1620px, there's a 300px margin on each side.
+       Above 1620px, such margins grow so the content keeps having the same
+       width.  */
+    padding-left: calc(-510px + 50vw);
+    padding-right: calc(-510px + 50vw);
+  }
+}
+
+.content h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.content h2 {
+  font-size: 1.75em;
+  margin-bottom: 0.6em;
+  margin-top: 1.15em;
+}
+
+.content hr {
+  display: none;
+}
+
+.content p {
+  margin-bottom: 1em;
+}
+
+.content pre:has(code) {
+  background-color: var(--color-bg-close);
+  border-radius: var(--border-radius);
+  margin-bottom: 1em;
+  max-width: fit-content;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+.content :global(pre code .token.comment) {
+  color: #81738f;
+}
+
+.content :global(pre code .token.function) {
+  color: var(--color-primitive-purple-strong);
+}
+
+.content :global(pre code .token.keyword) {
+  color: var(--color-primitive-purple);
+}
+
+.content :global(pre code .token.number) {
+  color: var(--color-primitive-purple);
+}
+
+.content :global(pre code .token.operator) {
+  color: var(--color-primitive-purple-strong);
+}
+
+.content .table-container {
+  border-radius: var(--border-radius);
+  margin-bottom: 1em;
+  max-width: fit-content;
+  overflow-x: auto;
+}
+
+.content table {
+  background-color: var(--color-bg-close);
+  border-collapse: collapse;
+  max-width: fit-content;
+  overflow-x: auto;
+}
+
+.content table td {
+  padding: 0.25em 1ch;
+}
+
+.content table th {
+  padding: 0.5em 1ch;
+}
+
+.content table thead {
+  background-color: var(--color-primary);
+  color: var(--color-fg-on-primary);
+}
+
+.content table tbody tr:not(:last-child) {
+  border-bottom: 1px solid rgb(127 127 127 / 0.2);
+}
