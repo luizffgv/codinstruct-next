@@ -42,7 +42,7 @@
   box-sizing: border-box;
   height: calc(100dvh - var(--navbar-height));
   overflow-y: auto;
-  padding: 0 0.5ch;
+  padding: 0 0.5ch 25dvh 0.5ch;
   position: fixed;
   width: var(--sidebar-width);
 
