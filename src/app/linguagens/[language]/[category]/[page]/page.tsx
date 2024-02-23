@@ -7,6 +7,7 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { contentPath, metadata } from "@/scripts/content-metadata";
 import { readFile } from "node:fs/promises";
 import rehypeRaw from "rehype-raw";
+import Link from "next/link";
 
 export function generateStaticParams() {
   return metadata.languages.flatMap((language) =>
@@ -66,6 +67,17 @@ export default async function Page({
       >
         {markdown}
       </Markdown>
+      <small>
+        Conteúdo escrito pela organização codinStruct, disponível pela licença{" "}
+        <Link href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">
+          CC BY-SA 4.0
+        </Link>
+        . Veja o repositório original do conteúdo{" "}
+        <Link href="https://github.com/codinStruct/codinStruct-content">
+          aqui
+        </Link>
+        .
+      </small>
     </div>
   );
 }
