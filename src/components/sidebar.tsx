@@ -3,11 +3,12 @@
 import { usePathname } from "next/navigation";
 import type { Metadata } from "@scripts/content-metadata";
 import styles from "./sidebar.module.css";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import Link from "next/link";
 
 export default function Sidebar({ metadata }: { metadata: Metadata }) {
   const [expanded, setExpanded] = useState(false);
+  const sidebarId = useId();
 
   useEffect(() => {
     let lastTouch: Touch | null = null;
@@ -91,6 +92,7 @@ export default function Sidebar({ metadata }: { metadata: Metadata }) {
         className={styles["expand-button"]}
         onClick={() => setExpanded(true)}
         aria-label="Exibir barra lateral"
+        aria-controls={sidebarId}
       >
         <span
           className={["material-symbols-outlined", styles["button-icon"]].join(
@@ -101,6 +103,7 @@ export default function Sidebar({ metadata }: { metadata: Metadata }) {
         </span>
       </button>
       <aside
+        id={sidebarId}
         className={[styles.sidebar, expanded ? styles.expanded : ""].join(" ")}
       >
         <button
@@ -108,6 +111,7 @@ export default function Sidebar({ metadata }: { metadata: Metadata }) {
           className={styles["contract-button"]}
           onClick={() => setExpanded(false)}
           aria-label="Ocultar barra lateral"
+          aria-controls={sidebarId}
         >
           <span
             className={[
