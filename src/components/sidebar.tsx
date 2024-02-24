@@ -90,7 +90,7 @@ export default function Sidebar({ metadata }: { metadata: Metadata }) {
         type="button"
         className={styles["expand-button"]}
         onClick={() => setExpanded(true)}
-        aria-label="Expand sidebar"
+        aria-label="Exibir barra lateral"
       >
         <span
           className={["material-symbols-outlined", styles["button-icon"]].join(
@@ -107,7 +107,7 @@ export default function Sidebar({ metadata }: { metadata: Metadata }) {
           type="button"
           className={styles["contract-button"]}
           onClick={() => setExpanded(false)}
-          aria-label="Hide sidebar"
+          aria-label="Ocultar barra lateral"
         >
           <span
             className={[
