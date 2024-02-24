@@ -50,3 +50,8 @@
   color: var(--inline-code-color);
   padding: var(--inline-code-padding);
 }
+
+.children {
+  /* So the footer won't show up immediately in small pages */
+  min-height: calc(100svh - var(--navbar-height));
+}
