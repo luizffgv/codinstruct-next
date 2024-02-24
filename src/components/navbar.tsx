@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
-      <Link href="/">
+      <Link href="/" aria-label="Página inicial">
         <Image
           src="/assets/logo.svg"
           alt="codinStruct logo"
