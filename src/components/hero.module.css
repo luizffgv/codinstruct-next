@@ -6,6 +6,7 @@
   position: relative;
   text-align: center;
   width: 100%;
+  isolation: isolate; /* So the z-index of .content won't escape the hero context */
 
   .canvas {
     left: 0;
