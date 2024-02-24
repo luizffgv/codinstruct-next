@@ -1,0 +1,9 @@
+.footer {
+  background-color: var(--color-bg-close);
+  padding: 1.5em 16px;
+  text-align: center;
+
+  .paragraph:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}

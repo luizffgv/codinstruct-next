@@ -3,6 +3,7 @@ import { Exo_2, Share_Tech_Mono } from "next/font/google";
 import "./globals.css";
 import styles from "./layout.module.css";
 import Navbar from "@components/navbar";
+import Footer from "@components/footer";
 
 const exo2 = Exo_2({ subsets: ["latin"], variable: "--font-exo2" });
 const shareTechMono = Share_Tech_Mono({
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className={styles.body}>
         <Navbar></Navbar>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );
