@@ -1,0 +1,19 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  .canvas {
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  .content {
+    z-index: 1;
+  }
+}

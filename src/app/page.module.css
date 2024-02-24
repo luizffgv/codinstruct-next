@@ -1,0 +1,21 @@
+.hero {
+  min-height: calc(100dvh - var(--navbar-height));
+}
+
+.welcome-title {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  font-size: 1.25em;
+  margin-bottom: 1em;
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: safe center;
+  list-style: none;
+}
