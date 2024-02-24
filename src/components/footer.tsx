@@ -12,6 +12,10 @@ export default function Footer() {
         Veja nossa organização no GitHub{" "}
         <Link href="https://github.com/codinStruct">aqui</Link>.
       </p>
+      <p className={styles.paragraph}>
+        Veja o código-fonte do site{" "}
+        <Link href="https://github.com/luizffgv/codinstruct-next">aqui</Link>.
+      </p>
     </footer>
   );
 }
