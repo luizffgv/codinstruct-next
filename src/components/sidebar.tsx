@@ -102,7 +102,7 @@ export default function Sidebar({ metadata }: { metadata: Metadata }) {
           arrow_left
         </span>
       </button>
-      <aside
+      <nav
         id={sidebarId}
         className={[styles.sidebar, expanded ? styles.expanded : ""].join(" ")}
       >
@@ -145,7 +145,7 @@ export default function Sidebar({ metadata }: { metadata: Metadata }) {
             ))}
           </details>
         ))}
-      </aside>
+      </nav>
     </>
   );
 }
