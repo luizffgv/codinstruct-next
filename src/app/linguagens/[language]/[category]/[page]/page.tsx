@@ -4,13 +4,13 @@ import remarkGfm from "remark-gfm";
 import styles from "./page.module.css";
 import { Prism } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { contentPath, metadata } from "@/scripts/content-metadata";
+import { contentPath, contentMetadata } from "@/scripts/content-metadata";
 import { readFile } from "node:fs/promises";
 import rehypeRaw from "rehype-raw";
 import Link from "next/link";
 
 export function generateStaticParams() {
-  return metadata.languages.flatMap((language) =>
+  return contentMetadata.languages.flatMap((language) =>
     language.categories.flatMap((category) =>
       category.pages.map((page) => ({
         language: language.path,

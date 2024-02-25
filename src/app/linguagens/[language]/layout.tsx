@@ -1,12 +1,12 @@
 import Sidebar from "@components/sidebar";
-import { metadata } from "@scripts/content-metadata";
+import { contentMetadata } from "@scripts/content-metadata";
 
 export default function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <Sidebar metadata={metadata}></Sidebar>
+      <Sidebar metadata={contentMetadata}></Sidebar>
       <main>{children}</main>
     </>
   );

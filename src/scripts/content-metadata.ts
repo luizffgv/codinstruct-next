@@ -70,4 +70,4 @@ function getMetadata(): Metadata {
 export const contentPath = "codinStruct-content/Content";
 
 /** Metadata about all the content for each available language. */
-export const metadata = getMetadata();
+export const contentMetadata = getMetadata();

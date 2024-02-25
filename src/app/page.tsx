@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import Hero from "@components/hero";
-import { metadata } from "@scripts/content-metadata";
+import { contentMetadata } from "@scripts/content-metadata";
 import LanguageBlock from "@/components/language-block";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
         <h1 className={styles["welcome-title"]}>Bem-vindo ao codinStruct</h1>
         <p className={styles.subtitle}>Escolha uma linguagem para ler sobre</p>
         <ul className={styles.languages}>
-          {metadata.languages.map((language) => (
+          {contentMetadata.languages.map((language) => (
             <li key={language.path}>
               <LanguageBlock language={language}></LanguageBlock>
             </li>
