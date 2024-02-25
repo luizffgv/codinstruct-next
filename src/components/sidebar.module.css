@@ -55,6 +55,7 @@
     right: 0;
     transition: translate 250ms ease;
     translate: 100%;
+    z-index: 2;
 
     &.expanded {
       translate: 0;

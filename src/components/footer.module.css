@@ -1,7 +1,9 @@
 .footer {
   background-color: var(--color-bg-close);
   padding: 1.5em 16px;
+  position: relative;
   text-align: center;
+  z-index: 1;
 
   .paragraph:not(:last-child) {
     margin-bottom: 1em;
