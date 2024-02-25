@@ -8,6 +8,15 @@ import { contentPath, contentMetadata } from "@/scripts/content-metadata";
 import { readFile } from "node:fs/promises";
 import rehypeRaw from "rehype-raw";
 import Link from "next/link";
+import { Metadata } from "next";
+
+type Props = {
+  params: {
+    language: string;
+    category: string;
+    page: string;
+  };
+};
 
 export function generateStaticParams() {
   return contentMetadata.languages.flatMap((language) =>
@@ -21,11 +30,34 @@ export function generateStaticParams() {
   );
 }
 
+export function generateMetadata({
+  params: { language, category, page },
+}: Props): Metadata {
+  const languageMetadata = contentMetadata.languages.find(
+    ({ path }) => language == path
+  );
+  if (languageMetadata == undefined)
+    throw new TypeError("Language metadata is undefined.");
+
+  const categoryMetadata = languageMetadata.categories.find(
+    ({ path }) => category == path
+  );
+  if (categoryMetadata == undefined)
+    throw new TypeError("Category metadata is undefined.");
+
+  const pageMetadata = categoryMetadata.pages.find(({ path }) => page == path);
+  if (pageMetadata == undefined)
+    throw new TypeError("Page metadata is undefined.");
+
+  return {
+    title: `${languageMetadata.title} — ${pageMetadata.title}`,
+    description: `Aprenda sobre ${languageMetadata.title} aqui.`,
+  };
+}
+
 export default async function Page({
   params: { language, category, page },
-}: {
-  params: { language: string; category: string; page: string };
-}) {
+}: Props) {
   const pagePath = path.join(contentPath, language, category, `${page}.md`);
 
   const markdown = await readFile(pagePath, { encoding: "utf8" });
