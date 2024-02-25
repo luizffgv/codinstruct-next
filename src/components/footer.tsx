@@ -9,12 +9,16 @@ export default function Footer() {
         linguagens de programação.
       </p>
       <p className={styles.paragraph}>
-        Veja nossa organização no GitHub{" "}
-        <Link href="https://github.com/codinStruct">aqui</Link>.
+        Veja nossa{" "}
+        <Link href="https://github.com/codinStruct">organização no GitHub</Link>
+        .
       </p>
       <p className={styles.paragraph}>
-        Veja o código-fonte do site{" "}
-        <Link href="https://github.com/luizffgv/codinstruct-next">aqui</Link>.
+        Veja o{" "}
+        <Link href="https://github.com/luizffgv/codinstruct-next">
+          código-fonte do site
+        </Link>
+        .
       </p>
     </footer>
   );

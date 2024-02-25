@@ -72,9 +72,9 @@ export default async function Page({
         <Link href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">
           CC BY-SA 4.0
         </Link>
-        . Veja o repositório original do conteúdo{" "}
+        . Veja o{" "}
         <Link href="https://github.com/codinStruct/codinStruct-content">
-          aqui
+          repositório original do conteúdo
         </Link>
         .
       </small>
