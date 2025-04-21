@@ -131,18 +131,20 @@ export default function Sidebar({ metadata }: { metadata: Metadata }) {
             className={styles.category}
           >
             <summary>{category.title}</summary>
-            {category.pages.map((page) => (
-              <Link
-                key={`${languageMetadata.path}/${category.path}/${page.path}`}
-                className={styles.entry}
-                href={`/linguagens/${languageMetadata.path}/${category.path}/${page.path}`}
-                data-active={pathname.endsWith(
-                  `${languageMetadata.path}/${category.path}/${page.path}`
-                )}
-              >
-                {page.title}
-              </Link>
-            ))}
+            <div className={styles["entry-list"]}>
+              {category.pages.map((page) => (
+                <Link
+                  key={`${languageMetadata.path}/${category.path}/${page.path}`}
+                  className={styles.entry}
+                  href={`/linguagens/${languageMetadata.path}/${category.path}/${page.path}`}
+                  data-active={pathname.endsWith(
+                    `${languageMetadata.path}/${category.path}/${page.path}`
+                  )}
+                >
+                  {page.title}
+                </Link>
+              ))}
+            </div>
           </details>
         ))}
       </nav>
